@@ -1,0 +1,47 @@
+/* 
+Color palette: #EDF1D6 / #9DC08B / #609966 / #40513B 
+*/
+
+/* font */
+@font-face {
+    font-family: 'TiltNeon';
+    src: url('ressources/fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf');
+    font-weight: 1 999;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: #EDF1D6;
+    color: #40513B;
+    font-family: 'TiltNeon';
+}
+
+/* Header */
+#header{
+    height: 90px;
+}
+
+nav{
+    height: 100%;;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    width: 80%;
+}
+
+ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+li a {
+    text-decoration: none;
+    color: #40513B;
+}
