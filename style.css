@@ -19,6 +19,84 @@ body{
     background-color: #EDF1D6;
     color: #40513B;
     font-family: 'TiltNeon';
+    position: relative;
+    font-size: calc(500vw/340);
+}
+
+h1{
+    font-size: calc(6000vw/1018);
+}
+
+h2{
+    font-size: calc(2000vw/1018);
+    font-weight: 50;
+}
+
+
+.button{
+    width: 9vw;
+    height: 3vh;
+    border-radius: 13px;
+    border: 0px;
+}
+a .button:hover{
+    background: #a0d38f;
+    box-shadow: 3px 3px 10px #646464;
+    border: 0px solid #646464;
+    transform: translate(5px, 5px);
+    transition: transform 0.2s, font-size 0.05s, height 0.1s, width 0.1s;
+    font-size: 1em;
+    cursor: pointer;
+    width: 11vw;
+    height: 5vh;
+}
+
+.animatedButton {
+    background: linear-gradient(270deg, #5b814f, #c9d09a);
+    background-size: 400% 400%;
+
+    -webkit-animation: gradientAnim 3s ease infinite;
+    -moz-animation: gradientAnim 3s ease infinite;
+    -o-animation: gradientAnim 3s ease infinite;
+    animation: gradientAnim 3s ease infinite;
+}
+
+@-webkit-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.bg-img{
+    position: absolute;
+    z-index: 1;
+}
+
+
+/* Landing Hero */
+#landing-hero{
+    width: 95%;
+    height: 95%;
+    border: 3px solid #40513B;
+    border-radius: 30px;
+    left: 2.5%;
+    top: 2.5%;
+    position: fixed;
 }
 
 /* Header */
@@ -27,12 +105,12 @@ body{
 }
 
 nav{
-    height: 100%;;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row-reverse;
-    width: 80%;
+    width: 90%;
 }
 
 ul{
@@ -40,8 +118,67 @@ ul{
     list-style: none;
     display: flex;
 }
+li{
+    box-sizing: border-box;
+    position: relative;
+}
 
 li a {
     text-decoration: none;
     color: #40513B;
+    padding: 19px;
+}
+
+li a:hover{
+    color:#5b814f;
+}
+li a::before{
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-bottom: 0px solid;
+    pointer-events: none;
+}
+
+li a:hover::before{
+    border-bottom: 1px solid;
+    width: 90%;
+    transition: width 0.3s;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.container{
+    width: 90%;
+    display: flex;
+    z-index: 10;
+
+}
+
+.circle-arrow{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: 3px solid ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    left: calc(50% - (35px/2));
+}
+
+.circle-arrow:hover{
+    cursor: pointer;
+    transition: width 0.2s, height 0.2s, left 0.1s ;
+    height: 45px;
+    width: 45px;
+    left: calc(50% - (45px/2));
 }
