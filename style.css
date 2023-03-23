@@ -21,6 +21,7 @@ body{
     font-family: 'TiltNeon';
     position: relative;
     font-size: calc(500vw/340);
+    overflow-x: hidden;
 }
 
 h1{
@@ -84,6 +85,21 @@ h2{
     justify-content: center;
 }
 
+#menu-bar{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background: white;
+    right: 0;
+    z-index: 100;
+}
+
+#menu-bar ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Landing Hero */
 
 
@@ -128,8 +144,7 @@ li{
 .btnMenu {
     text-decoration: none;
     color: #40513B;
-    padding: 19px;
-    font-size: 1.7em;
+    font-size: 1.9em;
 }
 
 .btnMenu:hover{
@@ -187,16 +202,21 @@ li{
 
 .lineContainer{
     height: 100%;
-    width: 20px;
+    width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
 }
 
 .line{
-    height:100%;
+    height:80%;
     background-color: #40513B;
-    width:100%;
+    width:20px;
 }
 
 
@@ -294,7 +314,7 @@ li{
     flex-direction: row;
 }
 
-.col{
+.col-sky{
     display: flex;
     flex-direction: column;
     align-items: center;

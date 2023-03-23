@@ -3,15 +3,32 @@
     <head>
         <title>Index</title>
         <link rel="stylesheet" href="style.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body>
+        <div id="menu-bar" style="display: none;">
+            <ul>
+                <li><h3>Menu</h3></li>
+                <hr style="width:80%;"/>
+                <li><h3>Home</h3></li>
+                <li><h3>Usage</h3></li>
+                <li><h3>Try it !</h3></li>
+            </ul>
+        </div>
         <div class="hero d-f-center-all">
             <div id="landing-hero">
-                <div id="header">
-                    <a class="btnMenu" href="#">Menu</a>
+                <div class="lineContainer" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="150">
+                    <p class="btnMenu" href="">Menu</p>
+                    <svg width="20px" viewBox="0 0 30 40" preserveAspectRatio="none">
+                        <path d='M0,0 L15,15 L30,0 V40 H-10 V-40 ' fill="#40513B" />
+                    </svg>
+                    <div class="line"></div>
+                    <svg width="20px" height="10%" viewBox="0 0 30 40" preserveAspectRatio="none">
+                        <line stroke-dasharray="5,5" x1="0" y1="0" x2="0" y2="60" stroke="#40513B" stroke-width="60px" />
+                    </svg>
                 </div>
 
-                <div class="content">
+                <div class="content" data-aos="fade-up" data-aos-duration="1500">
                     <div class="container">
                         <div class="col">
                         <h1>Ipsum fugiat culpa Lorem adipisicing</h1>
@@ -19,33 +36,37 @@
                             <a href="#"><button class="button animatedButton">Try me !</button></a>
                         </div>
                     </div>
-                    <div class="lineContainer">
-                        <svg width="20px" viewBox="0 0 30 40" preserveAspectRatio="none">
-                            <path d='M0,0 L15,15 L30,0 V40 H-10 V-40 ' fill="#40513B" />
-                        </svg>
-                        <div class="line"></div>
-                    </div>
                     <img src="ressources/images/world.svg" class="bg-img" style=" right:0vw; width: calc( (2000vw) /(30) );"/>
-                    <div class="circle-arrow"><b class="arrow">&darr;</b></div>
+                    <div class="circle-arrow" onclick="document.getElementById('explanation').scrollIntoView({behavior:'smooth'});"><b class="arrow">&darr;</b></div>
                     
                 </div>
             </div>
         </div>
 
         <div id="explanation" class="hero">
+            <div class="lineContainer" style="top: 100%;" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="150">
+                <a class="btnMenu" href="#">Usage</a>
+                <svg width="20px" viewBox="0 0 30 40" preserveAspectRatio="none">
+                    <path d='M0,0 L15,15 L30,0 V40 H-10 V-40 ' fill="#40513B" />
+                </svg>
+                <div class="line"></div>
+                <svg width="20px" height="10%" viewBox="0 0 30 40" preserveAspectRatio="none">
+                    <line stroke-dasharray="5,5" x1="0" y1="0" x2="0" y2="60" stroke="#40513B" stroke-width="60px" />
+                </svg>
+            </div>
             <div class="bloc cloud"></div>
             <div class="bloc sky">
-                <div class="container-sky">
+                <div class="container-sky" data-aos="fade-down" data-aos-duration="1500">
                     <img src="ressources/images/Leaves_object.svg" alt="leaves" style="max-width: 10%;transform: translate(10px, 25px);z-index: 10;"/>
-                    <div class="col">
+                    <div class="col-sky">
                             <p>Transform your PDF document with a Completion Report</p>
                             <img src="ressources/images/doc.svg" alt="doc" style="max-width: 300px;"/>
                     </div>
-                    <div class="col">
+                    <div class="col-sky">
                             <img src="ressources/images/arrow-right.svg" alt="arrow" style="max-width: 300px;"/>
                     </div>
                 
-                    <div class="col">
+                    <div class="col-sky">
                         <p>To a simple report with charts</p>
                         <img src="ressources/images/report.svg" alt="doc" style="max-width: 300px;"/>
                     </div>
@@ -73,5 +94,10 @@
         <div id="upload" class="hero">
 
         </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
     </body>
 </html>
