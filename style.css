@@ -34,61 +34,59 @@ h2{
 
 
 .button{
-    width: 9vw;
+    /* width: 9vw;
     height: 3vh;
     border-radius: 13px;
-    border: 0px;
-}
-a .button:hover{
-    background: #a0d38f;
-    box-shadow: 3px 3px 10px #646464;
-    border: 0px solid #646464;
-    transform: translate(5px, 5px);
-    transition: transform 0.2s, font-size 0.05s, height 0.1s, width 0.1s;
-    font-size: 1em;
+    border: 0px; */
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #fff;
     cursor: pointer;
-    width: 11vw;
-    height: 5vh;
+    letter-spacing: 2px;
+    position:relative;
+    overflow:hidden;
+    margin: 0 20px;
+    background-color: #9DC08B;
 }
 
-.animatedButton {
-    background: linear-gradient(270deg, #5b814f, #c9d09a);
-    background-size: 400% 400%;
+.button:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background : #609966;
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.3;
+  }
 
-    -webkit-animation: gradientAnim 3s ease infinite;
-    -moz-animation: gradientAnim 3s ease infinite;
-    -o-animation: gradientAnim 3s ease infinite;
-    animation: gradientAnim 3s ease infinite;
-}
-
-@-webkit-keyframes gradientAnim {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes gradientAnim {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-o-keyframes gradientAnim {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes gradientAnim {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
+  .button:hover:before {
+    width: 100%;
+  }
 
 .bg-img{
     position: absolute;
     z-index: 1;
+    pointer-events: none;
 }
 
+.hero{
+    height: 100vh;
+    width: 100vw;
+}
+
+.d-f-center-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Landing Hero */
+
+
 #landing-hero{
     width: 95%;
     height: 95%;
@@ -96,12 +94,16 @@ a .button:hover{
     border-radius: 30px;
     left: 2.5%;
     top: 2.5%;
-    position: fixed;
 }
 
 /* Header */
 #header{
     height: 90px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    width: 99%;
 }
 
 nav{
@@ -123,28 +125,28 @@ li{
     position: relative;
 }
 
-li a {
+.btnMenu {
     text-decoration: none;
     color: #40513B;
     padding: 19px;
+    font-size: 1.7em;
 }
 
-li a:hover{
+.btnMenu:hover{
     color:#5b814f;
 }
-li a::before{
+.btnMenu::after{
     box-sizing: inherit;
     content: '';
-    position: absolute;
+    display: block;
     width: 0%;
-    height: 100%;
     border-bottom: 0px solid;
     pointer-events: none;
 }
 
-li a:hover::before{
+.btnMenu:hover::after{
     border-bottom: 1px solid;
-    width: 90%;
+    width: 100%;
     transition: width 0.3s;
 }
 
@@ -171,7 +173,7 @@ li a:hover::before{
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 5px;
+    bottom: 35px;
     left: calc(50% - (35px/2));
 }
 
@@ -181,4 +183,126 @@ li a:hover::before{
     height: 45px;
     width: 45px;
     left: calc(50% - (45px/2));
+}
+
+.lineContainer{
+    height: 100%;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.line{
+    height:100%;
+    background-color: #40513B;
+    width:100%;
+}
+
+
+/* Explanation Hero */
+#explanation{
+    background-color: white;
+}
+
+.sand{
+    background: #FFD966;
+    background-image: radial-gradient(#818181 1px, transparent 0);
+    background-size: 3px 3px;
+    background-position: -19px -19px;
+}
+
+.dirt{
+    background: #9F8772;
+    fill: #9F8772;
+}
+
+.grass{
+    background: #C9F4AA;
+    fill: #C9F4AA;
+}
+
+.sky{
+    background-color: #B4E4FF;
+    height: 60% !important;
+}
+
+.cloud{
+    background-color: white;
+}
+
+.bloc{
+    width: 100%;
+    height: 10%;
+    position: relative;
+}
+
+.custom-shape-divider-bottom-1679580910 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1679580910 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 44px;
+}
+
+.custom-shape-divider-bottom-1679580910 .shape-fill, .custom-shape-divider-top-1679580974 .shape-fill {
+    fill: #B4E4FF;
+}
+
+.custom-shape-divider-top-1679580974 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1679580974 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 59px;
+}
+    .cloud::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-size: 40px;
+  background-image:
+    radial-gradient(circle at 20px -10px , transparent 24px, #B4E4FF 26px);
+  }
+
+.container-sky{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.row{
+    display: flex;
+    height: 100%;
 }
