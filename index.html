@@ -6,14 +6,17 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body>
-        <div id="menu-bar" style="display: none;">
-            <ul>
-                <li><h3>Menu</h3></li>
-                <hr style="width:80%;"/>
-                <li><h3>Home</h3></li>
-                <li><h3>Usage</h3></li>
-                <li><h3>Try it !</h3></li>
-            </ul>
+        <div id="menu" class="hide">
+            <div class="menu-left anim-menu-left"></div>
+            <div class="menu-right anim-menu-right">
+                <ul>
+                    <li><h3>Menu</h3></li>
+                    <hr style="width:80%;"/>
+                    <li><h3 class="menu-item">Home</h3></li>
+                    <li><h3 class="menu-item">Usage</h3></li>
+                    <li><h3 class="menu-item">Try it !</h3></li>
+                </ul>
+            </div>
         </div>
         <div class="hero d-f-center-all">
             <div id="landing-hero">
@@ -97,7 +100,26 @@
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
+            function showMenu(){
+                var menu = document.getElementById("menu")
+                if(menu.classList.contains("hide")){
+                    menu.classList.remove("hide");
+                }
+            }
+
+            function hideMenu(){
+                var menu = document.getElementById("menu")
+                if(!menu.classList.contains("hide")){
+                    setTimeout(()=>{menu.classList.add("hide");},1000);
+                }
+                                       
+                    
+            }
             AOS.init();
+            var e = document.getElementsByClassName("btnMenu");
+
+            Array.from(e).forEach(el=>{el.addEventListener("click", showMenu)});
+            document.getElementsByClassName("menu-left")[0].addEventListener("click", hideMenu);
           </script>
     </body>
 </html>
