@@ -7,21 +7,21 @@
     </head>
     <body>
         <div id="menu" class="hide">
-            <div class="menu-left anim-menu-left"></div>
+            <div class="menu-left anim-menu-left" style="z-index: 100;"></div>
             <div class="menu-right anim-menu-right">
                 <ul>
                     <li><h3>Menu</h3></li>
                     <hr style="width:80%;"/>
-                    <li><h3 class="menu-item">Home</h3></li>
-                    <li><h3 class="menu-item">Usage</h3></li>
-                    <li><h3 class="menu-item">Try it !</h3></li>
+                    <li onclick="document.getElementById('landing-hero').scrollIntoView({behavior:'smooth'});hideMenu();"><h3 class="menu-item">Home</h3></li>
+                    <li onclick="document.getElementById('explanation').scrollIntoView({behavior:'smooth'});hideMenu();"><h3 class="menu-item">Usage</h3></li>
+                    <li onclick="document.getElementById('upload').scrollIntoView({behavior:'smooth'});hideMenu();"><h3 class="menu-item">Try it !</h3></li>
                 </ul>
             </div>
         </div>
         <div class="hero d-f-center-all">
             <div id="landing-hero">
                 <div class="lineContainer" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="150">
-                    <p class="btnMenu" href="">Menu</p>
+                    <p class="btnMenu">Menu</p>
                     <svg width="20px" viewBox="0 0 30 40" preserveAspectRatio="none">
                         <path d='M0,0 L15,15 L30,0 V40 H-10 V-40 ' fill="#40513B" />
                     </svg>
@@ -48,7 +48,7 @@
 
         <div id="explanation" class="hero">
             <div class="lineContainer" style="top: 100%;" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="150">
-                <a class="btnMenu" href="#">Usage</a>
+                <p class="btnMenu">Usage</p>
                 <svg width="20px" viewBox="0 0 30 40" preserveAspectRatio="none">
                     <path d='M0,0 L15,15 L30,0 V40 H-10 V-40 ' fill="#40513B" />
                 </svg>
@@ -59,7 +59,7 @@
             </div>
             <div class="bloc cloud"></div>
             <div class="bloc sky">
-                <div class="container-sky" data-aos="fade-down" data-aos-duration="1500" style="position: inherit; z-index: 100;">
+                <div class="container-sky" data-aos="fade-down" data-aos-duration="1500" style="position: inherit; z-index: 50;">
                     <img src="ressources/images/Leaves_object.svg" alt="leaves" style="max-width: 10%;transform: translate(10px, 25px);z-index: 10;"/>
                     <div class="col-sky">
                             <p>Transform your PDF document with a Completion Report</p>
@@ -134,7 +134,7 @@
             function hideMenu(){
                 var menu = document.getElementById("menu")
                 if(!menu.classList.contains("hide")){
-                    setTimeout(()=>{menu.classList.add("hide");},1000);
+                   menu.classList.add("hide");
                 }
                                        
                     
