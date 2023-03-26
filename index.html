@@ -34,8 +34,8 @@
                 <div class="content" data-aos="fade-up" data-aos-duration="1500">
                     <div class="container">
                         <div class="col">
-                        <h1>Ipsum fugiat culpa Lorem adipisicing</h1>
-                            <h2>Ipsum fugiat culpa Lorem adipisicing Ipsum fugiat culpa Lorem adipisicing.</h2>
+                        <h1>Composite Log Analyzer</h1>
+                            <h2>Let our IA analyze your PDF file containing a completion log or composite log to have a summary of the Maureen formation.</h2>
                             <a href="#"><button class="button animatedButton">Try me !</button></a>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="bloc cloud"></div>
             <div class="bloc sky">
-                <div class="container-sky" data-aos="fade-down" data-aos-duration="1500">
+                <div class="container-sky" data-aos="fade-down" data-aos-duration="1500" style="position: inherit; z-index: 100;">
                     <img src="ressources/images/Leaves_object.svg" alt="leaves" style="max-width: 10%;transform: translate(10px, 25px);z-index: 10;"/>
                     <div class="col-sky">
                             <p>Transform your PDF document with a Completion Report</p>
@@ -94,12 +94,36 @@
         </div>
 
 
-        <div id="upload" class="hero">
+        <div id="upload" class="hero d-f-center-all">
+            <div class="container">
+                <h2>Upload your PDF file to try !</h2>
+                <div class="upload-container">
+                    <input type="file" id="file_upload" />
+                </div>
+                <br>
+                <button class="upload-btn" onclick="uploadFiles()">Submit</button>
+            </div>
+        </div>
 
+        <div id="footer">
+            <p>DATA Battle IA Pau 2023 - TEAM CY TOTAL</p>
         </div>
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
+            function uploadFiles() {
+                var files = document.getElementById('file_upload').files;
+                if(files.length==0){
+                    alert("Please first choose or drop any file(s)...");
+                    return;
+                }
+                var filenames="";
+                for(var i=0;i<files.length;i++){
+                    filenames+=files[i].name+"\n";
+                }
+                alert("Selected file(s) :\n____________________\n"+filenames);
+            }
+
             function showMenu(){
                 var menu = document.getElementById("menu")
                 if(menu.classList.contains("hide")){
